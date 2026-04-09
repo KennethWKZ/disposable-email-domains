@@ -104,7 +104,7 @@ export class DisposableEmailChecker {
   constructor(config: Partial<EmailCheckerConfig> = {}) {
     this.config = {
       disposableDomainsUrl:
-        "https://raw.githubusercontent.com/ali-master/disposable-email-domains/data/domains.txt",
+        "https://raw.githubusercontent.com/KennethWKZ/disposable-email-domains/refs/heads/master/data/domains.txt",
       localDataPath: "data/domains.txt",
       allowlistPath: "config/allowlist.txt",
       blacklistPath: "config/blacklist.txt",
