@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/compare/1.3.0...1.3.1) (2026-04-09)
+
+### Bug Fixes
+
+* default disposableDomainsUrl ([88702a9](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/commit/88702a993d5f96c70e40e26130b27610a784ebe7))
+
 ## 1.3.0 (2026-04-09)
 
 ### Features
