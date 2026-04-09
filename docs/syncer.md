@@ -70,24 +70,24 @@ The syncer provides:
 ### Basic Synchronization
 
 ```typescript
-import { DisposableEmailSyncManager } from '@usex/disposable-email-domains/syncer';
+import { DisposableEmailSyncManager } from "@kennethwkz/disposable-email-domains/syncer";
 
 const manager = new DisposableEmailSyncManager({
-  outputPath: './data',
+  outputPath: "./data",
   enableStats: true,
-  concurrency: 5
+  concurrency: 5,
 });
 
 const repositories = [
   {
-    type: 'git' as const,
-    url: 'https://github.com/disposable/disposable-email-domains',
-    blocklist_files: ['/refs/heads/main/disposable_email_blocklist.conf']
+    type: "git" as const,
+    url: "https://github.com/disposable/disposable-email-domains",
+    blocklist_files: ["/refs/heads/main/disposable_email_blocklist.conf"],
   },
   {
-    type: 'url' as const,
-    url: 'https://raw.githubusercontent.com/wesbos/burner-email-providers/master/emails.txt'
-  }
+    type: "url" as const,
+    url: "https://raw.githubusercontent.com/wesbos/burner-email-providers/master/emails.txt",
+  },
 ];
 
 const result = await manager.sync(repositories);
@@ -97,18 +97,21 @@ console.log(`Synced ${result.domains.size} unique domains`);
 ### Using the Quick Sync Function
 
 ```typescript
-import { quickSync } from '@usex/disposable-email-domains/syncer';
+import { quickSync } from "@kennethwkz/disposable-email-domains/syncer";
 
-const result = await quickSync([
+const result = await quickSync(
+  [
+    {
+      type: "git",
+      url: "https://github.com/FGRibreau/mailchecker",
+      blocklist_files: ["/refs/heads/master/list.txt"],
+    },
+  ],
   {
-    type: 'git',
-    url: 'https://github.com/FGRibreau/mailchecker',
-    blocklist_files: ['/refs/heads/master/list.txt']
-  }
-], {
-  concurrency: 10,
-  enableStats: true
-});
+    concurrency: 10,
+    enableStats: true,
+  },
+);
 
 console.log(`Processing completed in ${result.stats.totalTime}ms`);
 ```
@@ -126,6 +129,7 @@ constructor(options?: SyncOptions)
 ```
 
 **Parameters:**
+
 - `options` (optional): Configuration options for the sync manager
 
 #### Methods
@@ -139,6 +143,7 @@ const result = await manager.sync(repositories);
 ```
 
 **Parameters:**
+
 - `repositories`: Array of repository configurations to sync from
 
 **Returns:** Promise resolving to `SyncResult` containing domains, statistics, and errors.
@@ -149,12 +154,12 @@ const result = await manager.sync(repositories);
 
 ```typescript
 interface SyncOptions {
-  outputPath?: string;        // Output directory path (default: 'dist')
-  enableStats?: boolean;      // Generate detailed statistics (default: true)
-  enableBackup?: boolean;     // Create backups of previous data (default: true)
-  concurrency?: number;       // Max concurrent downloads (default: 5)
-  timeout?: number;          // Request timeout in ms (default: 30000)
-  retries?: number;          // Number of retry attempts (default: 3)
+  outputPath?: string; // Output directory path (default: 'dist')
+  enableStats?: boolean; // Generate detailed statistics (default: true)
+  enableBackup?: boolean; // Create backups of previous data (default: true)
+  concurrency?: number; // Max concurrent downloads (default: 5)
+  timeout?: number; // Request timeout in ms (default: 30000)
+  retries?: number; // Number of retry attempts (default: 3)
 }
 ```
 
@@ -162,12 +167,12 @@ interface SyncOptions {
 
 ```typescript
 interface Repository {
-  type: 'git' | 'url' | 'local';
+  type: "git" | "url" | "local";
   url: string;
-  blocklist_files?: string[];    // For git repositories
-  allowlist_files?: string[];    // For git repositories
-  format?: 'txt' | 'json' | 'csv' | 'auto';
-  encoding?: string;             // File encoding (default: 'utf-8')
+  blocklist_files?: string[]; // For git repositories
+  allowlist_files?: string[]; // For git repositories
+  format?: "txt" | "json" | "csv" | "auto";
+  encoding?: string; // File encoding (default: 'utf-8')
   headers?: Record<string, string>; // Custom HTTP headers for URL requests
 }
 ```
@@ -176,9 +181,9 @@ interface Repository {
 
 ```typescript
 interface SyncResult {
-  domains: Set<string>;        // All unique domains found
-  stats: SyncStats;           //  statistics
-  errors: Error[];            // Any errors encountered
+  domains: Set<string>; // All unique domains found
+  stats: SyncStats; //  statistics
+  errors: Error[]; // Any errors encountered
 }
 ```
 
@@ -223,12 +228,12 @@ interface RepositoryStats {
 
 ```typescript
 const manager = new DisposableEmailSyncManager({
-  outputPath: './output',
+  outputPath: "./output",
   enableStats: true,
   enableBackup: true,
   concurrency: 8,
   timeout: 45000,
-  retries: 5
+  retries: 5,
 });
 ```
 
@@ -243,22 +248,22 @@ class CustomSyncManager extends DisposableEmailSyncManager {
   // Override domain validation logic
   protected validateDomain(domain: string): boolean {
     // Custom validation logic
-    return /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(domain) && 
-           !domain.includes('localhost') &&
-           domain.length > 3;
+    return (
+      /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(domain) && !domain.includes("localhost") && domain.length > 3
+    );
   }
 
   // Override deduplication logic
   protected deduplicateDomains(domains: Map<string, DomainEntry>): Map<string, DomainEntry> {
     // Custom deduplication with priority rules
     const result = new Map<string, DomainEntry>();
-    
+
     for (const [domain, entry] of domains) {
       if (!result.has(domain) || this.shouldReplaceEntry(result.get(domain)!, entry)) {
         result.set(domain, entry);
       }
     }
-    
+
     return result;
   }
 }
@@ -284,6 +289,7 @@ Syncs from Git repositories by accessing raw file contents.
 ```
 
 **Features:**
+
 - Support for multiple files per repository
 - Branch and tag specification
 - Automatic format detection
@@ -307,6 +313,7 @@ Downloads from direct HTTP/HTTPS URLs.
 ```
 
 **Features:**
+
 - Custom HTTP headers support
 - Multiple format support (txt, json, csv)
 - Encoding specification
@@ -326,6 +333,7 @@ Processes local files on the filesystem.
 ```
 
 **Features:**
+
 - File system access
 - Multiple format support
 - Encoding detection
@@ -339,22 +347,22 @@ Processes local files on the filesystem.
 const repositories = [
   // Text format
   {
-    type: 'url',
-    url: 'https://example.com/domains.txt',
-    format: 'txt'
+    type: "url",
+    url: "https://example.com/domains.txt",
+    format: "txt",
   },
   // JSON format
   {
-    type: 'url',
-    url: 'https://api.example.com/domains.json',
-    format: 'json'
+    type: "url",
+    url: "https://api.example.com/domains.json",
+    format: "json",
   },
   // CSV format
   {
-    type: 'local',
-    url: './data/domains.csv',
-    format: 'csv'
-  }
+    type: "local",
+    url: "./data/domains.csv",
+    format: "csv",
+  },
 ];
 ```
 
@@ -363,32 +371,32 @@ const repositories = [
 ```typescript
 class AdvanceSyncManager extends DisposableEmailSyncManager {
   private domainCategories = new Map<string, string>();
-  
+
   async sync(repositories: Repository[]): Promise<SyncResult> {
     const result = await super.sync(repositories);
-    
+
     // Post-process domains for categorization
     await this.categorizeDomains(result.domains);
-    
+
     // Generate additional outputs
     await this.generateCategoryReport();
     await this.generateTrendAnalysis();
-    
+
     return result;
   }
-  
+
   private async categorizeDomains(domains: Set<string>): Promise<void> {
     for (const domain of domains) {
       const category = this.determineDomainCategory(domain);
       this.domainCategories.set(domain, category);
     }
   }
-  
+
   private determineDomainCategory(domain: string): string {
-    if (domain.includes('temp')) return 'temporary';
-    if (domain.includes('mail')) return 'email-service';
-    if (domain.includes('10min')) return 'short-lived';
-    return 'general';
+    if (domain.includes("temp")) return "temporary";
+    if (domain.includes("mail")) return "email-service";
+    if (domain.includes("10min")) return "short-lived";
+    return "general";
   }
 }
 ```
@@ -398,30 +406,30 @@ class AdvanceSyncManager extends DisposableEmailSyncManager {
 ```typescript
 class ProgressTrackingSyncManager extends DisposableEmailSyncManager {
   private onProgress?: (progress: SyncProgress) => void;
-  
+
   constructor(options: SyncOptions, onProgress?: (progress: SyncProgress) => void) {
     super(options);
     this.onProgress = onProgress;
   }
-  
+
   protected async downloadFromRepositories(repositories: Repository[]): Promise<RepositoryStats[]> {
     const results: RepositoryStats[] = [];
-    
+
     for (let i = 0; i < repositories.length; i++) {
       const repo = repositories[i];
-      
+
       // Report progress
       this.onProgress?.({
         current: i + 1,
         total: repositories.length,
         currentRepository: repo.url,
-        completed: i / repositories.length
+        completed: i / repositories.length,
       });
-      
+
       const result = await this.downloadFromRepository(repo);
       results.push(result);
     }
-    
+
     return results;
   }
 }
@@ -441,19 +449,19 @@ interface SyncProgress {
 ```typescript
 // High-throughput configuration
 const highThroughputManager = new DisposableEmailSyncManager({
-  concurrency: 15,          // Higher concurrency for faster processing
-  timeout: 60000,           // Longer timeout for reliability
-  retries: 2,               // Fewer retries for speed
-  enableStats: false        // Disable stats for minimal overhead
+  concurrency: 15, // Higher concurrency for faster processing
+  timeout: 60000, // Longer timeout for reliability
+  retries: 2, // Fewer retries for speed
+  enableStats: false, // Disable stats for minimal overhead
 });
 
-// Reliability-focused configuration  
+// Reliability-focused configuration
 const reliableManager = new DisposableEmailSyncManager({
-  concurrency: 3,           // Lower concurrency for stability
-  timeout: 30000,           // Standard timeout
-  retries: 5,               // More retries for resilience
-  enableStats: true,        // Full statistics tracking
-  enableBackup: true        // Data backup enabled
+  concurrency: 3, // Lower concurrency for stability
+  timeout: 30000, // Standard timeout
+  retries: 5, // More retries for resilience
+  enableStats: true, // Full statistics tracking
+  enableBackup: true, // Data backup enabled
 });
 ```
 
@@ -463,23 +471,23 @@ const reliableManager = new DisposableEmailSyncManager({
 class MemoryOptimizedSyncManager extends DisposableEmailSyncManager {
   private readonly maxDomainsInMemory = 50000;
   private domainBatches: string[][] = [];
-  
+
   protected processDomains(domains: string[]): void {
     // Process domains in batches to reduce memory usage
     const batchSize = Math.min(this.maxDomainsInMemory, domains.length);
-    
+
     for (let i = 0; i < domains.length; i += batchSize) {
       const batch = domains.slice(i, i + batchSize);
       this.processBatch(batch);
     }
   }
-  
+
   private processBatch(batch: string[]): void {
     // Process each batch independently
     const processedBatch = batch
-      .filter(domain => this.validateDomain(domain))
-      .map(domain => this.normalizeDomain(domain));
-    
+      .filter((domain) => this.validateDomain(domain))
+      .map((domain) => this.normalizeDomain(domain));
+
     this.domainBatches.push(processedBatch);
   }
 }
@@ -487,7 +495,7 @@ class MemoryOptimizedSyncManager extends DisposableEmailSyncManager {
 
 ## 🚨 Error Handling
 
-###  Error Handling
+### Error Handling
 
 ```typescript
 class RobustSyncManager extends DisposableEmailSyncManager {
@@ -495,39 +503,39 @@ class RobustSyncManager extends DisposableEmailSyncManager {
     try {
       return await super.sync(repositories);
     } catch (error) {
-      console.error('Sync failed:', error);
-      
+      console.error("Sync failed:", error);
+
       // Attempt recovery with reduced repository set
-      const criticalRepos = repositories.filter(repo => 
-        repo.url.includes('github.com') // Prioritize GitHub sources
+      const criticalRepos = repositories.filter(
+        (repo) => repo.url.includes("github.com"), // Prioritize GitHub sources
       );
-      
+
       if (criticalRepos.length > 0) {
-        console.log('Attempting recovery with critical repositories...');
+        console.log("Attempting recovery with critical repositories...");
         return await super.sync(criticalRepos);
       }
-      
+
       throw error;
     }
   }
-  
+
   protected async downloadFromRepository(repo: Repository): Promise<RepositoryStats> {
     let lastError: Error | undefined;
-    
+
     for (let attempt = 1; attempt <= this.syncOptions.retries; attempt++) {
       try {
         return await super.downloadFromRepository(repo);
       } catch (error) {
         lastError = error as Error;
-        
+
         if (attempt < this.syncOptions.retries) {
           const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
           console.log(`Retry ${attempt}/${this.syncOptions.retries} for ${repo.url} in ${delay}ms`);
-          await new Promise(resolve => setTimeout(resolve, delay));
+          await new Promise((resolve) => setTimeout(resolve, delay));
         }
       }
     }
-    
+
     throw lastError;
   }
 }
@@ -538,25 +546,27 @@ class RobustSyncManager extends DisposableEmailSyncManager {
 ```typescript
 const manager = new DisposableEmailSyncManager({
   concurrency: 5,
-  retries: 3
+  retries: 3,
 });
 
 // Handle partial failures gracefully
 const repositories = [
-  { type: 'git', url: 'https://github.com/reliable/source1' },
-  { type: 'url', url: 'https://unreliable.com/domains.txt' },
-  { type: 'git', url: 'https://github.com/reliable/source2' }
+  { type: "git", url: "https://github.com/reliable/source1" },
+  { type: "url", url: "https://unreliable.com/domains.txt" },
+  { type: "git", url: "https://github.com/reliable/source2" },
 ];
 
 const result = await manager.sync(repositories);
 
 if (result.errors.length > 0) {
-  console.warn(`${result.errors.length} repositories failed, but continuing with ${result.domains.size} domains`);
-  
+  console.warn(
+    `${result.errors.length} repositories failed, but continuing with ${result.domains.size} domains`,
+  );
+
   // Log failed repositories for manual review
   result.stats.repositoryStats
-    .filter(stat => !stat.success)
-    .forEach(stat => console.log(`Failed: ${stat.url} - ${stat.error}`));
+    .filter((stat) => !stat.success)
+    .forEach((stat) => console.log(`Failed: ${stat.url} - ${stat.error}`));
 }
 ```
 
@@ -568,9 +578,11 @@ if (result.errors.length > 0) {
 const result = await manager.sync(repositories);
 const stats = result.stats;
 
-console.log('=== Sync Statistics ===');
+console.log("=== Sync Statistics ===");
 console.log(`Total Repositories: ${stats.totalRepositories}`);
-console.log(`Success Rate: ${(stats.successfulRepositories / stats.totalRepositories * 100).toFixed(1)}%`);
+console.log(
+  `Success Rate: ${((stats.successfulRepositories / stats.totalRepositories) * 100).toFixed(1)}%`,
+);
 console.log(`Unique Domains: ${stats.uniqueDomains}`);
 console.log(`Duplicates Removed: ${stats.duplicatesRemoved}`);
 console.log(`Processing Efficiency: ${stats.processingEfficiency.toFixed(2)} domains/second`);
@@ -581,7 +593,9 @@ stats.repositoryStats
   .sort((a, b) => b.domainsCount - a.domainsCount)
   .forEach((repo, index) => {
     console.log(`${index + 1}. ${repo.url}`);
-    console.log(`   Domains: ${repo.domainsCount}, Time: ${repo.downloadTime}ms, Size: ${repo.fileSize} bytes`);
+    console.log(
+      `   Domains: ${repo.domainsCount}, Time: ${repo.downloadTime}ms, Size: ${repo.fileSize} bytes`,
+    );
   });
 ```
 
@@ -594,19 +608,19 @@ class MonitoredSyncManager extends DisposableEmailSyncManager {
     totalSyncTime: 0,
     averageSyncTime: 0,
     peakMemoryUsage: 0,
-    errorRate: 0
+    errorRate: 0,
   };
-  
+
   async sync(repositories: Repository[]): Promise<SyncResult> {
     const startTime = Date.now();
     const startMemory = process.memoryUsage().heapUsed;
-    
+
     try {
       const result = await super.sync(repositories);
-      
+
       // Update success metrics
       this.updateMetrics(startTime, startMemory, true);
-      
+
       return result;
     } catch (error) {
       // Update failure metrics
@@ -614,26 +628,28 @@ class MonitoredSyncManager extends DisposableEmailSyncManager {
       throw error;
     }
   }
-  
+
   private updateMetrics(startTime: number, startMemory: number, success: boolean): void {
     const syncTime = Date.now() - startTime;
     const currentMemory = process.memoryUsage().heapUsed;
     const memoryIncrease = currentMemory - startMemory;
-    
+
     this.performanceMetrics.syncCount++;
     this.performanceMetrics.totalSyncTime += syncTime;
-    this.performanceMetrics.averageSyncTime = 
+    this.performanceMetrics.averageSyncTime =
       this.performanceMetrics.totalSyncTime / this.performanceMetrics.syncCount;
-    this.performanceMetrics.peakMemoryUsage = 
-      Math.max(this.performanceMetrics.peakMemoryUsage, memoryIncrease);
-    
+    this.performanceMetrics.peakMemoryUsage = Math.max(
+      this.performanceMetrics.peakMemoryUsage,
+      memoryIncrease,
+    );
+
     if (!success) {
-      this.performanceMetrics.errorRate = 
-        (this.performanceMetrics.errorRate * (this.performanceMetrics.syncCount - 1) + 1) / 
+      this.performanceMetrics.errorRate =
+        (this.performanceMetrics.errorRate * (this.performanceMetrics.syncCount - 1) + 1) /
         this.performanceMetrics.syncCount;
     }
   }
-  
+
   getPerformanceMetrics() {
     return { ...this.performanceMetrics };
   }
@@ -645,152 +661,158 @@ class MonitoredSyncManager extends DisposableEmailSyncManager {
 ### Complete Production Setup
 
 ```typescript
-import { DisposableEmailSyncManager } from '@usex/disposable-email-domains/syncer';
-import { writeFileSync } from 'fs';
+import { DisposableEmailSyncManager } from "@kennethwkz/disposable-email-domains/syncer";
+import { writeFileSync } from "fs";
 
 class ProductionSyncManager {
   private manager: DisposableEmailSyncManager;
-  
+
   constructor() {
     this.manager = new DisposableEmailSyncManager({
-      outputPath: './data/production',
+      outputPath: "./data/production",
       enableStats: true,
       enableBackup: true,
       concurrency: 8,
       timeout: 30000,
-      retries: 3
+      retries: 3,
     });
   }
-  
+
   async performDailySync(): Promise<void> {
     const repositories = [
       {
-        type: 'git' as const,
-        url: 'https://github.com/FGRibreau/mailchecker',
-        blocklist_files: ['/refs/heads/master/list.txt']
+        type: "git" as const,
+        url: "https://github.com/FGRibreau/mailchecker",
+        blocklist_files: ["/refs/heads/master/list.txt"],
       },
       {
-        type: 'git' as const,
-        url: 'https://github.com/wesbos/burner-email-providers',
-        blocklist_files: ['/refs/heads/master/emails.txt']
+        type: "git" as const,
+        url: "https://github.com/wesbos/burner-email-providers",
+        blocklist_files: ["/refs/heads/master/emails.txt"],
       },
       {
-        type: 'git' as const,
-        url: 'https://github.com/disposable/disposable-email-domains',
-        blocklist_files: ['/refs/heads/main/disposable_email_blocklist.conf']
+        type: "git" as const,
+        url: "https://github.com/disposable/disposable-email-domains",
+        blocklist_files: ["/refs/heads/main/disposable_email_blocklist.conf"],
       },
       {
-        type: 'url' as const,
-        url: 'https://raw.githubusercontent.com/7c/fakefilter/main/txt/data.txt'
-      }
+        type: "url" as const,
+        url: "https://raw.githubusercontent.com/7c/fakefilter/main/txt/data.txt",
+      },
     ];
-    
+
     try {
-      console.log('Starting daily domain synchronization...');
+      console.log("Starting daily domain synchronization...");
       const result = await this.manager.sync(repositories);
-      
+
       // Save results in multiple formats
       this.saveResults(result);
-      
+
       // Generate and send report
       await this.generateDailyReport(result);
-      
+
       console.log(`Sync completed successfully: ${result.domains.size} domains`);
-      
     } catch (error) {
-      console.error('Daily sync failed:', error);
+      console.error("Daily sync failed:", error);
       await this.handleSyncFailure(error);
     }
   }
-  
+
   private saveResults(result: SyncResult): void {
     const domains = Array.from(result.domains).sort();
-    
+
     // Save as text file
-    writeFileSync('./data/domains.txt', domains.join('\n'));
-    
+    writeFileSync("./data/domains.txt", domains.join("\n"));
+
     // Save as JSON
-    writeFileSync('./data/domains.json', JSON.stringify({
-      domains,
-      metadata: {
-        count: domains.length,
-        lastUpdated: new Date().toISOString(),
-        sources: result.stats.successfulRepositories
-      }
-    }, null, 2));
-    
+    writeFileSync(
+      "./data/domains.json",
+      JSON.stringify(
+        {
+          domains,
+          metadata: {
+            count: domains.length,
+            lastUpdated: new Date().toISOString(),
+            sources: result.stats.successfulRepositories,
+          },
+        },
+        null,
+        2,
+      ),
+    );
+
     // Save statistics
-    writeFileSync('./data/sync-stats.json', JSON.stringify(result.stats, null, 2));
+    writeFileSync("./data/sync-stats.json", JSON.stringify(result.stats, null, 2));
   }
-  
+
   private async generateDailyReport(result: SyncResult): Promise<void> {
     const report = {
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString().split("T")[0],
       summary: {
         totalDomains: result.domains.size,
         newDomains: result.stats.newDomains,
         removedDomains: result.stats.removedDomains,
         successfulSources: result.stats.successfulRepositories,
-        totalSources: result.stats.totalRepositories
+        totalSources: result.stats.totalRepositories,
       },
       performance: {
         syncTime: result.stats.totalTime,
         processingSpeed: result.stats.processingEfficiency,
-        dataIntegrity: result.stats.dataIntegrityScore
+        dataIntegrity: result.stats.dataIntegrityScore,
       },
-      errors: result.errors.map(error => error.message)
+      errors: result.errors.map((error) => error.message),
     };
-    
+
     writeFileSync(`./reports/daily-${report.date}.json`, JSON.stringify(report, null, 2));
-    
+
     // Send notification if configured
     if (process.env.WEBHOOK_URL) {
       await this.sendWebhookNotification(report);
     }
   }
-  
+
   private async sendWebhookNotification(report: any): Promise<void> {
     try {
       const response = await fetch(process.env.WEBHOOK_URL!, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          text: `Domain sync completed: ${report.summary.totalDomains} domains (${report.summary.newDomains} new)`
-        })
+          text: `Domain sync completed: ${report.summary.totalDomains} domains (${report.summary.newDomains} new)`,
+        }),
       });
-      
+
       if (!response.ok) {
-        console.warn('Failed to send webhook notification');
+        console.warn("Failed to send webhook notification");
       }
     } catch (error) {
-      console.warn('Webhook notification failed:', error);
+      console.warn("Webhook notification failed:", error);
     }
   }
-  
+
   private async handleSyncFailure(error: Error): Promise<void> {
     // Log error details
     const errorReport = {
       timestamp: new Date().toISOString(),
       error: error.message,
-      stack: error.stack
+      stack: error.stack,
     };
-    
-    writeFileSync('./logs/sync-error.json', JSON.stringify(errorReport, null, 2));
-    
+
+    writeFileSync("./logs/sync-error.json", JSON.stringify(errorReport, null, 2));
+
     // Attempt emergency fallback sync
     try {
-      console.log('Attempting emergency fallback sync...');
+      console.log("Attempting emergency fallback sync...");
       const fallbackRepos = [
         {
-          type: 'local' as const,
-          url: './data/backup/domains.txt'
-        }
+          type: "local" as const,
+          url: "./data/backup/domains.txt",
+        },
       ];
-      
+
       await this.manager.sync(fallbackRepos);
-      console.log('Emergency fallback completed');
+      console.log("Emergency fallback completed");
     } catch (fallbackError) {
-      console.error('Emergency fallback also failed:', fallbackError);
+      console.error("Emergency fallback also failed:", fallbackError);
     }
   }
 }
@@ -804,61 +826,61 @@ await syncManager.performDailySync();
 
 ```typescript
 class CustomFormatSyncManager extends DisposableEmailSyncManager {
-  protected parseDomains(content: string, format: string = 'txt'): string[] {
+  protected parseDomains(content: string, format: string = "txt"): string[] {
     switch (format) {
-      case 'txt':
+      case "txt":
         return super.parseDomains(content, format);
-        
-      case 'yaml':
+
+      case "yaml":
         return this.parseYamlDomains(content);
-        
-      case 'xml':
+
+      case "xml":
         return this.parseXmlDomains(content);
-        
-      case 'custom':
+
+      case "custom":
         return this.parseCustomFormat(content);
-        
+
       default:
         throw new Error(`Unsupported format: ${format}`);
     }
   }
-  
+
   private parseYamlDomains(content: string): string[] {
     // Simple YAML parsing for domain lists
-    const lines = content.split('\n');
+    const lines = content.split("\n");
     const domains: string[] = [];
-    
+
     for (const line of lines) {
       const trimmed = line.trim();
-      if (trimmed.startsWith('- ')) {
+      if (trimmed.startsWith("- ")) {
         const domain = trimmed.substring(2).trim();
         if (this.isValidDomain(domain)) {
           domains.push(domain);
         }
       }
     }
-    
+
     return domains;
   }
-  
+
   private parseXmlDomains(content: string): string[] {
     // Simple XML parsing for domain lists
     const domainMatches = content.match(/<domain>(.*?)<\/domain>/g) || [];
     return domainMatches
-      .map(match => match.replace(/<\/?domain>/g, '').trim())
-      .filter(domain => this.isValidDomain(domain));
+      .map((match) => match.replace(/<\/?domain>/g, "").trim())
+      .filter((domain) => this.isValidDomain(domain));
   }
-  
+
   private parseCustomFormat(content: string): string[] {
     // Custom format: JSON with nested structure
     try {
       const data = JSON.parse(content);
       const domains: string[] = [];
-      
+
       if (data.disposable_domains && Array.isArray(data.disposable_domains)) {
         domains.push(...data.disposable_domains);
       }
-      
+
       if (data.categories) {
         for (const category of Object.values(data.categories)) {
           if (Array.isArray(category)) {
@@ -866,18 +888,20 @@ class CustomFormatSyncManager extends DisposableEmailSyncManager {
           }
         }
       }
-      
-      return domains.filter(domain => this.isValidDomain(domain));
+
+      return domains.filter((domain) => this.isValidDomain(domain));
     } catch (error) {
       throw new Error(`Failed to parse custom format: ${error}`);
     }
   }
-  
+
   private isValidDomain(domain: string): boolean {
-    return /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(domain) && 
-           !domain.includes('..') && 
-           domain.length > 3 && 
-           domain.length < 253;
+    return (
+      /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(domain) &&
+      !domain.includes("..") &&
+      domain.length > 3 &&
+      domain.length < 253
+    );
   }
 }
 ```
@@ -897,7 +921,7 @@ For syncer-specific questions and issues:
 
 - 🐛 [Report Issues](https://github.com/ali-master/disposable-email-domains/issues)
 - 💬 [Join Discussions](https://github.com/ali-master/disposable-email-domains/discussions)
-- 📧 [Email Support](mailto:ali@usex.dev)
+- 📧 [Email Support](mailto:ali@kennethwkz.dev)
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "name": "@usex/disposable-email-domains",
+  "name": "@kennethwkz/disposable-email-domains",
   "description": "Comprehensive TypeScript SDK for detecting disposable email addresses with real-time synchronization, advanced DNS validation (MX, SPF, DMARC), intelligent caching, and high-performance email validation. Features 119K+ domains from 15+ sources with automatic updates, pattern matching, subdomain checking, and enterprise-grade validation capabilities.",
   "version": "1.2.0",
   "type": "module",
@@ -21,14 +21,13 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Ali Torki",
-    "url": "https://github.com/ali-master",
-    "email": "ali_4286@live.com"
+    "name": "Kenneth Wong",
+    "url": "https://github.com/kennethwkz"
   },
-  "homepage": "https://gihtub.com/ali-master/disposable-email-domains#readme",
+  "homepage": "https://gihtub.com/kennethwkz/disposable-email-domains#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ali-master/disposable-email-domains.git"
+    "url": "git+https://github.com/kennethwkz/disposable-email-domains.git"
   },
   "keywords": [
     "disposable",

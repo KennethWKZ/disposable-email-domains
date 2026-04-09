@@ -18,7 +18,7 @@ import type { Repository, SyncOptions, SyncResult } from "./types";
  *
  * @example
  * ```typescript
- * import { quickSync } from '  @usex/disposable-email-domains';
+ * import { quickSync } from '  @kennethwkz/disposable-email-domains';
  *
  * const result = await quickSync([
  *   {
@@ -44,7 +44,7 @@ export async function quickSync(
  *
  * @example
  * ```typescript
- * import { createSyncManager } from '@usex/disposable-email-domains';
+ * import { createSyncManager } from '@kennethwkz/disposable-email-domains';
  *
  * const manager = createSyncManager({
  *   concurrency: 10,

@@ -5,11 +5,12 @@
   
   <p><strong>A powerful TypeScript SDK for detecting disposable email addresses with DNS and SMTP validation</strong></p>
   
-  [![npm version](https://badge.fury.io/js/%40usex%2Fdisposable-email-domains.svg)](https://www.npmjs.com/package/@usex/disposable-email-domains)
+  [![npm version](https://badge.fury.io/js/%40usex%2Fdisposable-email-domains.svg)](https://www.npmjs.com/package/@kennethwkz/disposable-email-domains)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <a href="https://www.producthunt.com/products/github-192?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-detecting&#0045;disposable&#0045;email&#0045;addresses" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1021628&theme=light&t=1759345731657" alt="Detecting&#0032;disposable&#0032;email&#0032;addresses - A&#0032;powerful&#0032;SDK&#0032;for&#0032;detecting&#0032;disposable&#0032;email&#0032;addresses | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 </div>
 
 ---
@@ -25,6 +26,7 @@
 - **🎨 Extensible** - Plugin system for custom validation rules
 
 <!-- START STATS -->
+
 ## 📊 Current Statistics
 
 > **Last Updated**: April 9, 2026 at 04:48 PM GMT+8 | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
@@ -35,36 +37,37 @@
 ### 🎯 Domain Coverage
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
-|:---:|:---:|:---:|:---:|
-| **127,770** | **7,557** | **559** | **+5.48%** |
+| :------------------: | :---------------------: | :--------------------: | :----------------: |
+|     **127,770**      |        **7,557**        |        **559**         |     **+5.48%**     |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
-|:---:|:---:|:---:|:---:|
-| **0.82s** | **100.0%** | **1.9 MB** | **164,587 removed** |
+| :--------------: | :-----------------: | :--------------: | :------------------: |
+|    **0.82s**     |     **100.0%**      |    **1.9 MB**    | **164,587 removed**  |
 
 </div>
 
 ### 🏆 Top Contributing Sources
 
-| Repository | Domains | Success | Performance |
-|------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 118,653 | ✅ | 0.24s (1.8 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 55,911 | ✅ | 0.21s (838.9 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,284 | ✅ | 0.06s (388.1 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 27,120 | ✅ | 0.19s (401.7 KB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 26,548 | ✅ | 0.14s (371.1 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,523 | ✅ | 0.08s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 9,311 | ✅ | 0.09s (130.5 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 5,361 | ✅ | 0.03s (68.0 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.36s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.19s (48.9 KB) |
+| Repository                                                                                                                | Domains | Success | Performance      |
+| ------------------------------------------------------------------------------------------------------------------------- | ------- | ------- | ---------------- |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains)                                         | 118,653 | ✅      | 0.24s (1.8 MB)   |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker)                                                         | 55,911  | ✅      | 0.21s (838.9 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers)                                         | 27,284  | ✅      | 0.06s (388.1 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list)                       | 27,120  | ✅      | 0.19s (401.7 KB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains)                             | 26,548  | ✅      | 0.14s (371.1 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files)                                         | 10,523  | ✅      | 0.08s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter)                                                                         | 9,311   | ✅      | 0.09s (130.5 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 5,361   | ✅      | 0.03s (68.0 KB)  |
+| [willwhite/freemail](https://github.com/willwhite/freemail)                                                               | 4,462   | ✅      | 0.36s (61.8 KB)  |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc)                                                               | 3,855   | ✅      | 0.19s (48.9 KB)  |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
 
 #### 🔍 Sync Analysis
+
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
@@ -73,6 +76,7 @@
 - **Total Data Processed**: 4.3 MB
 
 #### 🎯 Quality Metrics
+
 - **Duplicate Detection**: 164,587 duplicates identified and removed
 - **Data Integrity**: 100.0% repository success rate
 - **Coverage Efficiency**: 43.7% unique domains retained
@@ -80,19 +84,20 @@
 </details>
 
 ---
+
 <!-- END STATS -->
 
 ## 📦 Installation
 
 ```bash
 # Using bun (recommended)
-bun add @usex/disposable-email-domains
+bun add @kennethwkz/disposable-email-domains
 
 # Using npm
-npm install @usex/disposable-email-domains
+npm install @kennethwkz/disposable-email-domains
 
 # Using yarn
-yarn add @usex/disposable-email-domains
+yarn add @kennethwkz/disposable-email-domains
 ```
 
 ## 🚀 Quick Start
@@ -100,17 +105,17 @@ yarn add @usex/disposable-email-domains
 ### Basic Usage
 
 ```typescript
-import { DisposableEmailChecker } from '@usex/disposable-email-domains';
+import { DisposableEmailChecker } from "@kennethwkz/disposable-email-domains";
 
 const checker = new DisposableEmailChecker();
 
 // Single email check
-const result = await checker.checkEmail('test@mailinator.com');
+const result = await checker.checkEmail("test@mailinator.com");
 console.log(result.isDisposable); // true
-console.log(result.confidence);   // 95
+console.log(result.confidence); // 95
 
 // Batch validation
-const emails = ['user@gmail.com', 'temp@10minutemail.com'];
+const emails = ["user@gmail.com", "temp@10minutemail.com"];
 const results = await checker.checkEmailsBatch(emails);
 ```
 
@@ -124,18 +129,18 @@ const checker = new DisposableEmailChecker({
     checkSpfRecord: true,
     checkDmarcRecord: true,
     timeout: 5000,
-    retries: 3
-  }
+    retries: 3,
+  },
 });
 
-const result = await checker.checkEmail('user@example.com');
+const result = await checker.checkEmail("user@example.com");
 
 // Access DNS validation results
-console.log(result.dnsValidation?.hasMx);          // true
-console.log(result.dnsValidation?.mxRecords);      // [{ exchange: 'mail.example.com', priority: 10 }]
-console.log(result.dnsValidation?.hasSpf);         // true
-console.log(result.dnsValidation?.hasDmarc);       // true
-console.log(result.dnsValidation?.isConnectable);  // true
+console.log(result.dnsValidation?.hasMx); // true
+console.log(result.dnsValidation?.mxRecords); // [{ exchange: 'mail.example.com', priority: 10 }]
+console.log(result.dnsValidation?.hasSpf); // true
+console.log(result.dnsValidation?.hasDmarc); // true
+console.log(result.dnsValidation?.isConnectable); // true
 ```
 
 ### SMTP Validation
@@ -147,18 +152,18 @@ const checker = new DisposableEmailChecker({
   smtpValidation: {
     timeout: 10000,
     port: 25,
-    fromEmail: 'test@yourdomain.com',
-    helo: 'mail.yourdomain.com'
-  }
+    fromEmail: "test@yourdomain.com",
+    helo: "mail.yourdomain.com",
+  },
 });
 
-const result = await checker.checkEmail('user@example.com');
+const result = await checker.checkEmail("user@example.com");
 
 // Access SMTP validation results
-console.log(result.smtpValidation?.isDeliverable);      // true
-console.log(result.smtpValidation?.responseCode);       // 250
-console.log(result.smtpValidation?.responseMessage);    // '2.1.5 Recipient OK'
-console.log(result.smtpValidation?.serverTested);       // 'mail.example.com'
+console.log(result.smtpValidation?.isDeliverable); // true
+console.log(result.smtpValidation?.responseCode); // 250
+console.log(result.smtpValidation?.responseMessage); // '2.1.5 Recipient OK'
+console.log(result.smtpValidation?.serverTested); // 'mail.example.com'
 ```
 
 ### Combined DNS + SMTP Validation
@@ -171,15 +176,15 @@ const checker = new DisposableEmailChecker({
   dnsValidation: {
     validateMxConnectivity: true,
     checkSpfRecord: true,
-    checkDmarcRecord: true
+    checkDmarcRecord: true,
   },
   smtpValidation: {
     timeout: 8000,
-    fromEmail: 'test@yourdomain.com'
-  }
+    fromEmail: "test@yourdomain.com",
+  },
 });
 
-const result = await checker.checkEmail('user@example.com');
+const result = await checker.checkEmail("user@example.com");
 
 // Get complete validation picture
 console.log({
@@ -187,7 +192,7 @@ console.log({
   isDisposable: result.isDisposable,
   hasMx: result.dnsValidation?.hasMx,
   isDeliverable: result.smtpValidation?.isDeliverable,
-  confidence: result.confidence
+  confidence: result.confidence,
 });
 ```
 
@@ -198,56 +203,56 @@ console.log({
 ```typescript
 interface EmailCheckerConfig {
   // Validation Options
-  strictValidation?: boolean;              // Strict RFC validation (default: false)
-  checkMxRecord?: boolean;                 // Enable MX checking (default: false)
-  checkSmtpDeliverability?: boolean;       // Enable SMTP testing (default: false)
-  enableSubdomainChecking?: boolean;       // Check subdomains (default: true)
-  enablePatternMatching?: boolean;         // Use regex patterns (default: true)
-  
+  strictValidation?: boolean; // Strict RFC validation (default: false)
+  checkMxRecord?: boolean; // Enable MX checking (default: false)
+  checkSmtpDeliverability?: boolean; // Enable SMTP testing (default: false)
+  enableSubdomainChecking?: boolean; // Check subdomains (default: true)
+  enablePatternMatching?: boolean; // Use regex patterns (default: true)
+
   // Performance Options
-  enableCaching?: boolean;                 // Enable caching (default: true)
-  cacheSize?: number;                      // Cache size (default: 10000)
-  enableIndexing?: boolean;                // Use Trie/Bloom filters (default: true)
-  indexingStrategy?: 'trie' | 'bloom' | 'hybrid'; // Indexing strategy (default: 'hybrid')
-  
+  enableCaching?: boolean; // Enable caching (default: true)
+  cacheSize?: number; // Cache size (default: 10000)
+  enableIndexing?: boolean; // Use Trie/Bloom filters (default: true)
+  indexingStrategy?: "trie" | "bloom" | "hybrid"; // Indexing strategy (default: 'hybrid')
+
   // DNS Validation
   dnsValidation?: {
-    timeout?: number;                      // DNS timeout in ms (default: 5000)
-    retries?: number;                      // Retry attempts (default: 3)
-    enableCaching?: boolean;               // Cache DNS results (default: true)
-    cacheSize?: number;                    // DNS cache size (default: 5000)
-    cacheTtl?: number;                     // DNS cache TTL in ms (default: 300000)
-    concurrency?: number;                  // Max concurrent queries (default: 10)
-    validateMxConnectivity?: boolean;      // Test SMTP connectivity (default: false)
-    checkSpfRecord?: boolean;              // Check SPF records (default: false)
-    checkDmarcRecord?: boolean;            // Check DMARC records (default: false)
-    customDnsServers?: string[];           // Custom DNS servers
-    fallbackDnsServers?: string[];         // Fallback DNS servers
+    timeout?: number; // DNS timeout in ms (default: 5000)
+    retries?: number; // Retry attempts (default: 3)
+    enableCaching?: boolean; // Cache DNS results (default: true)
+    cacheSize?: number; // DNS cache size (default: 5000)
+    cacheTtl?: number; // DNS cache TTL in ms (default: 300000)
+    concurrency?: number; // Max concurrent queries (default: 10)
+    validateMxConnectivity?: boolean; // Test SMTP connectivity (default: false)
+    checkSpfRecord?: boolean; // Check SPF records (default: false)
+    checkDmarcRecord?: boolean; // Check DMARC records (default: false)
+    customDnsServers?: string[]; // Custom DNS servers
+    fallbackDnsServers?: string[]; // Fallback DNS servers
   };
-  
+
   // SMTP Validation
   smtpValidation?: {
-    timeout?: number;                      // SMTP timeout in ms (default: 10000)
-    port?: number;                         // SMTP port (default: 25)
-    fromEmail?: string;                    // FROM address (default: 'test@example.com')
-    helo?: string;                         // HELO hostname (default: 'mail.example.com')
-    retries?: number;                      // Retry attempts (default: 2)
-    enableCaching?: boolean;               // Cache SMTP results (default: true)
-    cacheSize?: number;                    // SMTP cache size (default: 1000)
-    cacheTtl?: number;                     // SMTP cache TTL in ms (default: 600000)
+    timeout?: number; // SMTP timeout in ms (default: 10000)
+    port?: number; // SMTP port (default: 25)
+    fromEmail?: string; // FROM address (default: 'test@example.com')
+    helo?: string; // HELO hostname (default: 'mail.example.com')
+    retries?: number; // Retry attempts (default: 2)
+    enableCaching?: boolean; // Cache SMTP results (default: true)
+    cacheSize?: number; // SMTP cache size (default: 1000)
+    cacheTtl?: number; // SMTP cache TTL in ms (default: 600000)
   };
-  
+
   // Data Sources
-  disposableDomainsUrl?: string;           // Remote domain list URL
-  localDataPath?: string;                  // Local domain list path
-  allowlistPath?: string;                  // Allowlist file path
-  blacklistPath?: string;                  // Blacklist file path
-  
+  disposableDomainsUrl?: string; // Remote domain list URL
+  localDataPath?: string; // Local domain list path
+  allowlistPath?: string; // Allowlist file path
+  blacklistPath?: string; // Blacklist file path
+
   // Custom Configuration
-  customPatterns?: RegExp[];               // Custom regex patterns
-  trustedDomains?: string[];               // Trusted domains (always valid)
-  suspiciousPatterns?: RegExp[];           // Suspicious patterns
-  customCache?: any;                       // Custom cache implementation
+  customPatterns?: RegExp[]; // Custom regex patterns
+  trustedDomains?: string[]; // Trusted domains (always valid)
+  suspiciousPatterns?: RegExp[]; // Suspicious patterns
+  customCache?: any; // Custom cache implementation
 }
 ```
 
@@ -256,27 +261,35 @@ interface EmailCheckerConfig {
 ### Core Methods
 
 #### `checkEmail(email: string): Promise<EmailValidationResult>`
+
 Validates a single email address with all enabled checks.
 
 #### `checkEmailsBatch(emails: string[]): Promise<EmailValidationResult[]>`
+
 Validates multiple emails efficiently with batch processing.
 
 #### `validateDomain(domain: string): Promise<DnsValidationResult>`
+
 Performs DNS validation for a domain (requires `checkMxRecord: true`).
 
 #### `addToAllowlist(domain: string): void`
+
 Adds a domain to the allowlist (always considered valid).
 
 #### `addToBlacklist(domain: string): void`
+
 Adds a domain to the blacklist (always considered invalid).
 
 #### `getStats(): object`
+
 Retrieves comprehensive statistics including DNS and SMTP metrics.
 
 #### `getMetrics(): PerformanceMetrics`
+
 Retrieves detailed performance metrics for all validation operations.
 
 #### `clearAllCaches(): Promise<void>`
+
 Clears all caches (email validation, DNS, and SMTP).
 
 ### Result Interfaces
@@ -290,12 +303,12 @@ interface EmailValidationResult {
   isBlacklisted: boolean;
   domain: string;
   localPart: string;
-  matchType: 'exact' | 'subdomain' | 'pattern' | 'none';
-  confidence: number;           // 0-100
-  validationTime: number;       // milliseconds
+  matchType: "exact" | "subdomain" | "pattern" | "none";
+  confidence: number; // 0-100
+  validationTime: number; // milliseconds
   errors: string[];
   warnings: string[];
-  
+
   // DNS validation results (when enabled)
   dnsValidation?: {
     hasMx: boolean;
@@ -305,7 +318,7 @@ interface EmailValidationResult {
     isConnectable: boolean;
     dnsValidationTime: number;
   };
-  
+
   // SMTP validation results (when enabled)
   smtpValidation?: {
     isValid: boolean;
@@ -323,48 +336,60 @@ interface EmailValidationResult {
 ### Standalone Components
 
 ```typescript
-import { EmailValidator, DnsResolver, SmtpValidator } from '@usex/disposable-email-domains';
+import { EmailValidator, DnsResolver, SmtpValidator } from "@kennethwkz/disposable-email-domains";
 
 // Standalone DNS resolver
 const dnsResolver = new DnsResolver({
   timeout: 5000,
   retries: 3,
-  validateMxConnectivity: true
+  validateMxConnectivity: true,
 });
-const dnsResult = await dnsResolver.validateMxRecord('gmail.com');
+const dnsResult = await dnsResolver.validateMxRecord("gmail.com");
 
 // Standalone SMTP validator
 const smtpValidator = new SmtpValidator({
   timeout: 10000,
-  fromEmail: 'test@yourdomain.com'
+  fromEmail: "test@yourdomain.com",
 });
-const smtpResult = await smtpValidator.validateEmail('user@example.com');
+const smtpResult = await smtpValidator.validateEmail("user@example.com");
 
 // Email validator with DNS and SMTP
 const emailValidator = new EmailValidator(
   false, // strict mode
   { timeout: 5000, validateMxConnectivity: true }, // DNS config
-  { timeout: 10000, fromEmail: 'test@yourdomain.com' } // SMTP config
+  { timeout: 10000, fromEmail: "test@yourdomain.com" }, // SMTP config
 );
-const validation = await emailValidator.validateEmailDeliverability('user@example.com');
+const validation = await emailValidator.validateEmailDeliverability("user@example.com");
 ```
 
 ### Custom Cache Implementation
 
 ```typescript
-import { DisposableEmailChecker, type ICache } from '@usex/disposable-email-domains';
+import { DisposableEmailChecker, type ICache } from "@kennethwkz/disposable-email-domains";
 
 class RedisCache implements ICache {
-  async get(key: string): Promise<any> { /* ... */ }
-  async set(key: string, value: any, ttl?: number): Promise<void> { /* ... */ }
-  async has(key: string): Promise<boolean> { /* ... */ }
-  async delete(key: string): Promise<boolean> { /* ... */ }
-  async clear(): Promise<void> { /* ... */ }
-  async size(): Promise<number> { /* ... */ }
+  async get(key: string): Promise<any> {
+    /* ... */
+  }
+  async set(key: string, value: any, ttl?: number): Promise<void> {
+    /* ... */
+  }
+  async has(key: string): Promise<boolean> {
+    /* ... */
+  }
+  async delete(key: string): Promise<boolean> {
+    /* ... */
+  }
+  async clear(): Promise<void> {
+    /* ... */
+  }
+  async size(): Promise<number> {
+    /* ... */
+  }
 }
 
 const checker = new DisposableEmailChecker({
-  customCache: new RedisCache()
+  customCache: new RedisCache(),
 });
 ```
 
@@ -374,21 +399,21 @@ const checker = new DisposableEmailChecker({
 const checker = new DisposableEmailChecker({
   checkMxRecord: true,
   checkSmtpDeliverability: true,
-  enableCaching: true
+  enableCaching: true,
 });
 
 // Process some emails
-await checker.checkEmail('test@gmail.com');
-await checker.checkEmail('temp@10minutemail.com');
+await checker.checkEmail("test@gmail.com");
+await checker.checkEmail("temp@10minutemail.com");
 
 // Get comprehensive statistics
 const stats = checker.getStats();
-console.log('Performance:', {
+console.log("Performance:", {
   totalValidations: stats.performance.totalValidations,
   avgTime: stats.performance.averageValidationTime,
   cacheHitRate: stats.performance.cacheHitRate,
   dnsStats: stats.dns,
-  smtpStats: stats.smtp
+  smtpStats: stats.smtp,
 });
 ```
 
@@ -404,28 +429,28 @@ async function validateLargeList(emails: string[]) {
     dnsValidation: {
       enableCaching: true,
       cacheSize: 20000,
-      concurrency: 25
+      concurrency: 25,
     },
     smtpValidation: {
       enableCaching: true,
-      cacheSize: 10000
-    }
+      cacheSize: 10000,
+    },
   });
 
   const batchSize = 50;
   const results = [];
-  
+
   for (let i = 0; i < emails.length; i += batchSize) {
     const batch = emails.slice(i, i + batchSize);
     const batchResults = await checker.checkEmailsBatch(batch);
     results.push(...batchResults);
-    
+
     // Add delay for SMTP validation to respect mail servers
     if (i + batchSize < emails.length) {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
     }
   }
-  
+
   return results;
 }
 ```
@@ -434,13 +459,13 @@ async function validateLargeList(emails: string[]) {
 
 ### Benchmarks
 
-| Operation | Time | Cache Hit Rate | Memory |
-|-----------|------|----------------|--------|
-| Single email validation | ~1-5ms | 90%+ | <5MB |
-| Batch validation (100 emails) | ~50-200ms | 90%+ | <10MB |
-| DNS validation | ~50-200ms | 90%+ | <10MB |
-| SMTP validation | ~500-2000ms | 75%+ | <5MB |
-| Combined DNS+SMTP | ~600-2200ms | 85%+ | <15MB |
+| Operation                     | Time        | Cache Hit Rate | Memory |
+| ----------------------------- | ----------- | -------------- | ------ |
+| Single email validation       | ~1-5ms      | 90%+           | <5MB   |
+| Batch validation (100 emails) | ~50-200ms   | 90%+           | <10MB  |
+| DNS validation                | ~50-200ms   | 90%+           | <10MB  |
+| SMTP validation               | ~500-2000ms | 75%+           | <5MB   |
+| Combined DNS+SMTP             | ~600-2200ms | 85%+           | <15MB  |
 
 ### Optimization Tips
 
@@ -451,6 +476,7 @@ async function validateLargeList(emails: string[]) {
 5. **Use hybrid indexing** for optimal performance with large domain lists
 
 Run benchmarks locally:
+
 ```bash
 bun run test:bench
 ```
