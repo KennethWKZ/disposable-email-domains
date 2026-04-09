@@ -74,7 +74,7 @@ jobs:
     steps:
       - name: 🔍 Check Trigger Conditions
         id: check
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const eventName = context.eventName;
@@ -175,12 +175,12 @@ jobs:
 
     steps:
       - name: 🚀 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: 🏗️ Setup Bun Runtime
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
@@ -191,7 +191,7 @@ jobs:
 
       - name: 📋 Notify Start
         if: needs.validate_trigger.outputs.trigger_type == 'comment'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const issueNumber = ${{ needs.validate_trigger.outputs.issue_number }};
@@ -366,7 +366,7 @@ jobs:
           echo "✅ Generated detailed report: $report_file"
 
       - name: 📤 Upload Report Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: manual-sync-report-${{ github.run_id }}
           path: ${{ steps.generate_report.outputs.report_path }}
@@ -374,7 +374,7 @@ jobs:
 
       - name: 📋 Notify Results
         if: needs.validate_trigger.outputs.trigger_type == 'comment'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const issueNumber = ${{ needs.validate_trigger.outputs.issue_number }};
@@ -429,13 +429,13 @@ jobs:
 
     steps:
       - name: 🚀 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🏗️ Setup Bun Runtime
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
 
       - name: 📦 Install Dependencies
         run: bun install --frozen-lockfile
@@ -506,7 +506,7 @@ jobs:
 
     steps:
       - name: 📊 Generate Workflow Summary
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const syncSuccess = '${{ needs.manual_sync.outputs.sync_success }}' === 'true';
