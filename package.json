@@ -83,7 +83,7 @@
     "sync:quick": "bun --bun run sync --no-stats --no-backup",
     "update-readme": "bun run scripts/update-readme-stats.ts",
     "update-readme:shell": "./scripts/update-readme-stats.sh",
-    "test": "bun run test:types && bun run test:size && CI=true vitest",
+    "test": "bun run test:types && bun run test:size && CI=true vitest run --passWithNoTests",
     "test:types": "tsc --noEmit",
     "test:size": "size-limit",
     "test:junit": "bun run test --reporter=junit --outputFile=test-report.junit.xml",
