@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/compare/1.3.1...1.3.2) (2026-04-15)
+
+### Continuous Integration
+
+* fix test step ([74298f2](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/commit/74298f21fe2954bc87a51bd38d8fa65486dc1a78))
+* update github action workflows to latest ([4ee4044](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/commit/4ee40442eb088d3a896eea31d225ba88f0a43773))
+
 ## [1.3.1](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/compare/1.3.0...1.3.1) (2026-04-09)
 
 ### Bug Fixes
