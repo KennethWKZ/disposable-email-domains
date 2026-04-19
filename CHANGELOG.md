@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.3](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/compare/1.3.2...1.3.3) (2026-04-19)
+
+### Continuous Integration
+
+* fix auto-sync PR create ([4bdbf81](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/commit/4bdbf81eb322fceae6df2f7eb72fc1f255d98e77))
+
 ## [1.3.2](https://kennethwkz-github.com/KennethWKZ/disposable-email-domains/compare/1.3.1...1.3.2) (2026-04-15)
 
 ### Continuous Integration
