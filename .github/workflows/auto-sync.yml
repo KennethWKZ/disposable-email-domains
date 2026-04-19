@@ -171,7 +171,7 @@ jobs:
           fi
 
       - name: 📊 Update README Statistics
-        if: steps.execute_sync.outputs.success == 'true'
+        if: steps.sync_domains.outputs.sync_success == 'true'
         run: |
           echo "📊 Updating README with latest statistics..."
           
@@ -230,8 +230,30 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            // Retry helper: retries on HTTP 5xx or network errors with exponential backoff.
+            // Fails fast on non-retryable errors (e.g., 4xx validation).
+            async function withRetry(fn, { attempts = 3, baseMs = 2000, label = 'api call' } = {}) {
+              let lastErr;
+              for (let i = 1; i <= attempts; i++) {
+                try {
+                  return await fn();
+                } catch (err) {
+                  lastErr = err;
+                  const status = err?.status ?? 0;
+                  const retryable = status === 0 || status >= 500;
+                  console.log(`⚠️ ${label} attempt ${i}/${attempts} failed (status=${status}): ${err.message}`);
+                  if (!retryable || i === attempts) break;
+                  const delay = baseMs * Math.pow(2, i - 1);
+                  console.log(`⏳ Retrying in ${delay}ms...`);
+                  await new Promise(r => setTimeout(r, delay));
+                }
+              }
+              throw lastErr;
+            }
+
             const timestamp = new Date().toISOString();
             const processingTimeSeconds = (${{ steps.sync_stats.outputs.processing_time }} / 1000).toFixed(2);
+            const branchName = '${{ steps.create_branch.outputs.branch_name }}';
             
             // Generate detailed PR body with statistics and analysis
             const prBody = `## 🔄 Automated Disposable Email Domains Sync
@@ -299,17 +321,39 @@ jobs:
             `;
             
             try {
-              const { data: pullRequest } = await github.rest.pulls.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: `🔄 Auto-sync: Update disposable email domains (+${{ steps.sync_stats.outputs.new_domains }}, -${{ steps.sync_stats.outputs.removed_domains }})`,
-                head: '${{ steps.create_branch.outputs.branch_name }}',
-                base: 'master',
-                body: prBody,
-                maintainer_can_modify: true
-              });
-              
-              console.log(`✅ Pull request created: #${pullRequest.number}`);
+              // Idempotency guard: if a PR for this branch already exists (e.g., from a
+              // previous re-run after a transient failure), reuse it instead of erroring.
+              const { data: existingPrs } = await withRetry(
+                () => github.rest.pulls.list({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  head: `${context.repo.owner}:${branchName}`,
+                  state: 'open',
+                }),
+                { label: 'pulls.list' }
+              );
+
+              let pullRequest;
+              if (existingPrs.length > 0) {
+                pullRequest = existingPrs[0];
+                console.log(`♻️ Reusing existing PR #${pullRequest.number} for branch ${branchName}`);
+              } else {
+                const createResp = await withRetry(
+                  () => github.rest.pulls.create({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    title: `🔄 Auto-sync: Update disposable email domains (+${{ steps.sync_stats.outputs.new_domains }}, -${{ steps.sync_stats.outputs.removed_domains }})`,
+                    head: branchName,
+                    base: 'master',
+                    body: prBody,
+                    maintainer_can_modify: true
+                  }),
+                  { label: 'pulls.create' }
+                );
+                pullRequest = createResp.data;
+                console.log(`✅ Pull request created: #${pullRequest.number}`);
+              }
+
               core.setOutput('pr_number', pullRequest.number);
               
               // Add labels based on sync results
@@ -327,12 +371,15 @@ jobs:
                 labels.push('major-update');
               }
               
-              await github.rest.issues.addLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: pullRequest.number,
-                labels: labels
-              });
+              await withRetry(
+                () => github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pullRequest.number,
+                  labels: labels
+                }),
+                { label: 'issues.addLabels' }
+              );
               
               return pullRequest.number;
             } catch (error) {
