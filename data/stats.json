@@ -5,44 +5,44 @@
   "totalDomains": 128257,
   "uniqueDomains": 128257,
   "duplicates": 164672,
-  "newDomains": 41,
+  "newDomains": 0,
   "removedDomains": 0,
-  "processingTime": 754,
-  "lastSyncTimestamp": "2026-04-20T08:23:50.349Z",
+  "processingTime": 894,
+  "lastSyncTimestamp": "2026-04-20T19:20:30.455Z",
   "repositoryStats": {
     "https://github.com/disposable-email-domains/disposable-email-domains": {
       "url": "https://github.com/disposable-email-domains/disposable-email-domains",
       "success": true,
       "domainsCount": 5383,
-      "downloadTime": 79,
+      "downloadTime": 106,
       "fileSize": 69922
     },
     "https://github.com/FGRibreau/mailchecker": {
       "url": "https://github.com/FGRibreau/mailchecker",
       "success": true,
       "domainsCount": 56048,
-      "downloadTime": 395,
+      "downloadTime": 428,
       "fileSize": 860958
     },
     "https://github.com/disposable/disposable-email-domains": {
       "url": "https://github.com/disposable/disposable-email-domains",
       "success": true,
       "domainsCount": 26548,
-      "downloadTime": 357,
+      "downloadTime": 272,
       "fileSize": 380010
     },
     "https://github.com/7c/fakefilter": {
       "url": "https://github.com/7c/fakefilter",
       "success": true,
       "domainsCount": 9435,
-      "downloadTime": 198,
+      "downloadTime": 118,
       "fileSize": 135076
     },
     "https://github.com/wesbos/burner-email-providers": {
       "url": "https://github.com/wesbos/burner-email-providers",
       "success": true,
       "domainsCount": 27284,
-      "downloadTime": 299,
+      "downloadTime": 207,
       "fileSize": 397462
     },
     "https://github.com/sublime-security/static-files": {
@@ -56,63 +56,63 @@
       "url": "https://github.com/TheDahoom/disposable-email",
       "success": true,
       "domainsCount": 18,
-      "downloadTime": 186,
+      "downloadTime": 163,
       "fileSize": 234
     },
     "https://github.com/groundcat/disposable-email-domain-list": {
       "url": "https://github.com/groundcat/disposable-email-domain-list",
       "success": true,
       "domainsCount": 27120,
-      "downloadTime": 258,
+      "downloadTime": 238,
       "fileSize": 411313
     },
     "https://github.com/eser/sanitizer-svc": {
       "url": "https://github.com/eser/sanitizer-svc",
       "success": true,
       "domainsCount": 3855,
-      "downloadTime": 107,
+      "downloadTime": 186,
       "fileSize": 50067
     },
     "https://github.com/jespernissen/disposable-maildomain-list": {
       "url": "https://github.com/jespernissen/disposable-maildomain-list",
       "success": true,
       "domainsCount": 1004,
-      "downloadTime": 90,
+      "downloadTime": 175,
       "fileSize": 13224
     },
     "https://github.com/unkn0w/disposable-email-domain-list": {
       "url": "https://github.com/unkn0w/disposable-email-domain-list",
       "success": true,
       "domainsCount": 3617,
-      "downloadTime": 130,
+      "downloadTime": 139,
       "fileSize": 46855
     },
     "https://github.com/GeroldSetz/emailondeck.com-domains": {
       "url": "https://github.com/GeroldSetz/emailondeck.com-domains",
       "success": true,
       "domainsCount": 1121,
-      "downloadTime": 86,
+      "downloadTime": 109,
       "fileSize": 15722
     },
     "https://github.com/kslr/disposable-email-domains": {
       "url": "https://github.com/kslr/disposable-email-domains",
       "success": true,
       "domainsCount": 119037,
-      "downloadTime": 353,
+      "downloadTime": 447,
       "fileSize": 1848915
     },
     "https://github.com/MattKetmo/EmailChecker": {
       "url": "https://github.com/MattKetmo/EmailChecker",
       "success": true,
       "domainsCount": 2515,
-      "downloadTime": 161,
+      "downloadTime": 103,
       "fileSize": 33184
     },
     "https://github.com/willwhite/freemail": {
       "url": "https://github.com/willwhite/freemail",
       "success": true,
       "domainsCount": 4462,
-      "downloadTime": 163,
+      "downloadTime": 85,
       "fileSize": 63316
     }
   }
