@@ -8,7 +8,7 @@
  * GitHub Actions workflows to keep statistics current.
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, appendFileSync } from "fs";
 
 interface RepositoryStats {
   url: string;
@@ -329,14 +329,19 @@ ${this.generateRepositoryTable(stats.repositoryStats)}
     console.log(`🔄 Duplicates Removed: ${stats.duplicates.toLocaleString()}`);
     console.log(`📊 Last Sync: ${new Date(stats.lastSyncTimestamp).toISOString()}`);
 
-    if (process.env.GITHUB_ACTIONS) {
-      console.log(`::set-output name=total_domains::${stats.uniqueDomains}`);
-      console.log(`::set-output name=new_domains::${stats.newDomains}`);
-      console.log(`::set-output name=removed_domains::${stats.removedDomains}`);
-      console.log(
-        `::set-output name=success_rate::${((stats.successfulDownloads / stats.totalRepositories) * 100).toFixed(1)}`,
-      );
-      console.log(`::set-output name=processing_time::${stats.processingTime}`);
+    if (process.env.GITHUB_ACTIONS && process.env.GITHUB_OUTPUT) {
+      const successRate = (
+        (stats.successfulDownloads / stats.totalRepositories) * 100
+      ).toFixed(1);
+      const outputs =
+        [
+          `total_domains=${stats.uniqueDomains}`,
+          `new_domains=${stats.newDomains}`,
+          `removed_domains=${stats.removedDomains}`,
+          `success_rate=${successRate}`,
+          `processing_time=${stats.processingTime}`,
+        ].join("\n") + "\n";
+      appendFileSync(process.env.GITHUB_OUTPUT, outputs);
     }
   }
 }

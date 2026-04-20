@@ -333,25 +333,77 @@ jobs:
                 { label: 'pulls.list' }
               );
 
+              const prTitle = `🔄 Auto-sync: Update disposable email domains (+${{ steps.sync_stats.outputs.new_domains }}, -${{ steps.sync_stats.outputs.removed_domains }})`;
+
               let pullRequest;
+              let reused = false;
               if (existingPrs.length > 0) {
                 pullRequest = existingPrs[0];
+                reused = true;
                 console.log(`♻️ Reusing existing PR #${pullRequest.number} for branch ${branchName}`);
               } else {
-                const createResp = await withRetry(
-                  () => github.rest.pulls.create({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    title: `🔄 Auto-sync: Update disposable email domains (+${{ steps.sync_stats.outputs.new_domains }}, -${{ steps.sync_stats.outputs.removed_domains }})`,
-                    head: branchName,
-                    base: 'master',
-                    body: prBody,
-                    maintainer_can_modify: true
-                  }),
-                  { label: 'pulls.create' }
-                );
-                pullRequest = createResp.data;
-                console.log(`✅ Pull request created: #${pullRequest.number}`);
+                try {
+                  const createResp = await withRetry(
+                    () => github.rest.pulls.create({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      title: prTitle,
+                      head: branchName,
+                      base: 'master',
+                      body: prBody,
+                      maintainer_can_modify: true
+                    }),
+                    { label: 'pulls.create' }
+                  );
+                  pullRequest = createResp.data;
+                  console.log(`✅ Pull request created: #${pullRequest.number}`);
+                } catch (err) {
+                  // Recover from the eventual-consistency / concurrent-run race where
+                  // pulls.list returned [] but a PR for this branch actually exists.
+                  const alreadyExists =
+                    err?.status === 422 &&
+                    /pull request already exists/i.test(err?.message ?? '');
+                  if (!alreadyExists) throw err;
+
+                  console.log('⚠️ pulls.create returned 422 "already exists" — recovering by re-listing PRs for branch...');
+                  const { data: recoveredPrs } = await withRetry(
+                    () => github.rest.pulls.list({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      head: `${context.repo.owner}:${branchName}`,
+                      state: 'open',
+                    }),
+                    { label: 'pulls.list (422 recovery)' }
+                  );
+                  if (recoveredPrs.length === 0) {
+                    throw new Error(
+                      `GitHub reports a PR already exists for ${branchName} but none was returned on recovery list.`
+                    );
+                  }
+                  pullRequest = recoveredPrs[0];
+                  reused = true;
+                  console.log(`♻️ Recovered existing PR #${pullRequest.number}`);
+                }
+              }
+
+              // When reusing an existing PR, refresh its title/body so it reflects
+              // the latest sync stats instead of a stale run's numbers.
+              if (reused) {
+                try {
+                  await withRetry(
+                    () => github.rest.pulls.update({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      pull_number: pullRequest.number,
+                      title: prTitle,
+                      body: prBody,
+                    }),
+                    { label: 'pulls.update' }
+                  );
+                  console.log(`🔁 Refreshed PR #${pullRequest.number} with latest sync details`);
+                } catch (updateErr) {
+                  console.log(`⚠️ Could not refresh reused PR body: ${updateErr.message}`);
+                }
               }
 
               core.setOutput('pr_number', pullRequest.number);
