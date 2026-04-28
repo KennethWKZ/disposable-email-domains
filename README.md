@@ -28,7 +28,7 @@
 <!-- START STATS -->
 ## 📊 Current Statistics
 
-> **Last Updated**: April 28, 2026 at 08:37 AM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
+> **Last Updated**: April 28, 2026 at 07:52 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
 > 📋 **[View Detailed Report](data/report.md)** | Last sync analysis and insights
 
 <div align="center">
@@ -37,13 +37,13 @@
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
 |:---:|:---:|:---:|:---:|
-| **128,404** | **68** | **7** | **+0.05%** |
+| **128,405** | **1** | **0** | **+0.00%** |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
 |:---:|:---:|:---:|:---:|
-| **0.92s** | **100.0%** | **1.9 MB** | **210,331 removed** |
+| **0.71s** | **100.0%** | **1.9 MB** | **210,332 removed** |
 
 </div>
 
@@ -51,16 +51,16 @@
 
 | Repository | Domains | Success | Performance |
 |------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 119,160 | ✅ | 0.46s (1.8 MB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 72,184 | ✅ | 0.36s (1.0 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,047 | ✅ | 0.27s (840.8 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,283 | ✅ | 0.17s (388.1 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 27,120 | ✅ | 0.23s (401.7 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,523 | ✅ | 0.20s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 9,490 | ✅ | 0.15s (132.6 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 5,412 | ✅ | 0.14s (68.7 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.15s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.18s (48.9 KB) |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 119,160 | ✅ | 0.33s (1.8 MB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 72,184 | ✅ | 0.23s (1.0 MB) |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,047 | ✅ | 0.32s (840.8 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,283 | ✅ | 0.06s (388.1 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 27,120 | ✅ | 0.15s (401.7 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,523 | ✅ | 0.11s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter) | 9,490 | ✅ | 0.08s (132.6 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 5,413 | ✅ | 0.04s (68.7 KB) |
+| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.04s (61.8 KB) |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.06s (48.9 KB) |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
@@ -69,12 +69,12 @@
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
-- **Processing Efficiency**: 139267 domains/second
-- **Average Download Time**: 0.23s per repository
+- **Processing Efficiency**: 181620 domains/second
+- **Average Download Time**: 0.13s per repository
 - **Total Data Processed**: 5.0 MB
 
 #### 🎯 Quality Metrics
-- **Duplicate Detection**: 210,331 duplicates identified and removed
+- **Duplicate Detection**: 210,332 duplicates identified and removed
 - **Data Integrity**: 100.0% repository success rate
 - **Coverage Efficiency**: 37.9% unique domains retained
 
