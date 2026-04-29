@@ -4,115 +4,115 @@
   "failedDownloads": 0,
   "totalDomains": 128449,
   "uniqueDomains": 128449,
-  "duplicates": 210346,
-  "newDomains": 47,
-  "removedDomains": 3,
-  "processingTime": 839,
-  "lastSyncTimestamp": "2026-04-29T08:30:33.128Z",
+  "duplicates": 210345,
+  "newDomains": 0,
+  "removedDomains": 0,
+  "processingTime": 768,
+  "lastSyncTimestamp": "2026-04-29T19:48:20.468Z",
   "repositoryStats": {
     "https://github.com/disposable-email-domains/disposable-email-domains": {
       "url": "https://github.com/disposable-email-domains/disposable-email-domains",
       "success": true,
       "domainsCount": 5413,
-      "downloadTime": 94,
+      "downloadTime": 24,
       "fileSize": 70312
     },
     "https://github.com/FGRibreau/mailchecker": {
       "url": "https://github.com/FGRibreau/mailchecker",
       "success": true,
-      "domainsCount": 56047,
-      "downloadTime": 288,
-      "fileSize": 860933
+      "domainsCount": 56046,
+      "downloadTime": 240,
+      "fileSize": 860806
     },
     "https://github.com/disposable/disposable-email-domains": {
       "url": "https://github.com/disposable/disposable-email-domains",
       "success": true,
       "domainsCount": 72198,
-      "downloadTime": 370,
+      "downloadTime": 330,
       "fileSize": 1100081
     },
     "https://github.com/7c/fakefilter": {
       "url": "https://github.com/7c/fakefilter",
       "success": true,
       "domainsCount": 9487,
-      "downloadTime": 153,
+      "downloadTime": 46,
       "fileSize": 135695
     },
     "https://github.com/wesbos/burner-email-providers": {
       "url": "https://github.com/wesbos/burner-email-providers",
       "success": true,
       "domainsCount": 27283,
-      "downloadTime": 227,
+      "downloadTime": 133,
       "fileSize": 397445
     },
     "https://github.com/sublime-security/static-files": {
       "url": "https://github.com/sublime-security/static-files",
       "success": true,
       "domainsCount": 10523,
-      "downloadTime": 259,
+      "downloadTime": 162,
       "fileSize": 147442
     },
     "https://github.com/TheDahoom/disposable-email": {
       "url": "https://github.com/TheDahoom/disposable-email",
       "success": true,
       "domainsCount": 18,
-      "downloadTime": 265,
+      "downloadTime": 393,
       "fileSize": 234
     },
     "https://github.com/groundcat/disposable-email-domain-list": {
       "url": "https://github.com/groundcat/disposable-email-domain-list",
       "success": true,
       "domainsCount": 27120,
-      "downloadTime": 192,
+      "downloadTime": 187,
       "fileSize": 411313
     },
     "https://github.com/eser/sanitizer-svc": {
       "url": "https://github.com/eser/sanitizer-svc",
       "success": true,
       "domainsCount": 3855,
-      "downloadTime": 242,
+      "downloadTime": 63,
       "fileSize": 50067
     },
     "https://github.com/jespernissen/disposable-maildomain-list": {
       "url": "https://github.com/jespernissen/disposable-maildomain-list",
       "success": true,
       "domainsCount": 1003,
-      "downloadTime": 256,
+      "downloadTime": 156,
       "fileSize": 13204
     },
     "https://github.com/unkn0w/disposable-email-domain-list": {
       "url": "https://github.com/unkn0w/disposable-email-domain-list",
       "success": true,
       "domainsCount": 3617,
-      "downloadTime": 204,
+      "downloadTime": 207,
       "fileSize": 46855
     },
     "https://github.com/GeroldSetz/emailondeck.com-domains": {
       "url": "https://github.com/GeroldSetz/emailondeck.com-domains",
       "success": true,
       "domainsCount": 1121,
-      "downloadTime": 164,
+      "downloadTime": 229,
       "fileSize": 15722
     },
     "https://github.com/kslr/disposable-email-domains": {
       "url": "https://github.com/kslr/disposable-email-domains",
       "success": true,
       "domainsCount": 119206,
-      "downloadTime": 357,
+      "downloadTime": 316,
       "fileSize": 1851287
     },
     "https://github.com/MattKetmo/EmailChecker": {
       "url": "https://github.com/MattKetmo/EmailChecker",
       "success": true,
       "domainsCount": 2515,
-      "downloadTime": 165,
+      "downloadTime": 186,
       "fileSize": 33184
     },
     "https://github.com/willwhite/freemail": {
       "url": "https://github.com/willwhite/freemail",
       "success": true,
       "domainsCount": 4462,
-      "downloadTime": 112,
+      "downloadTime": 179,
       "fileSize": 63316
     }
   }
