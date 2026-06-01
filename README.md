@@ -28,7 +28,7 @@
 <!-- START STATS -->
 ## 📊 Current Statistics
 
-> **Last Updated**: May 31, 2026 at 07:38 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
+> **Last Updated**: June 1, 2026 at 11:52 AM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
 > 📋 **[View Detailed Report](data/report.md)** | Last sync analysis and insights
 
 <div align="center">
@@ -37,13 +37,13 @@
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
 |:---:|:---:|:---:|:---:|
-| **130,068** | **0** | **0** | **0.00%** |
+| **130,030** | **14** | **52** | **-0.03%** |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
 |:---:|:---:|:---:|:---:|
-| **0.60s** | **100.0%** | **1.9 MB** | **206,560 removed** |
+| **0.90s** | **100.0%** | **1.9 MB** | **206,384 removed** |
 
 </div>
 
@@ -51,16 +51,16 @@
 
 | Repository | Domains | Success | Performance |
 |------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 119,952 | ✅ | 0.29s (1.8 MB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 72,294 | ✅ | 0.26s (1.1 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,048 | ✅ | 0.17s (840.7 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,283 | ✅ | 0.06s (388.1 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 23,995 | ✅ | 0.13s (336.1 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,523 | ✅ | 0.09s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 9,679 | ✅ | 0.04s (134.6 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 5,488 | ✅ | 0.03s (69.6 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.13s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.07s (48.9 KB) |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 119,962 | ✅ | 0.41s (1.8 MB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 72,294 | ✅ | 0.47s (1.1 MB) |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,048 | ✅ | 0.28s (840.7 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,283 | ✅ | 0.18s (388.1 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 23,767 | ✅ | 0.36s (332.9 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,523 | ✅ | 0.14s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter) | 9,679 | ✅ | 0.15s (134.6 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 5,494 | ✅ | 0.07s (69.7 KB) |
+| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.15s (61.8 KB) |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.13s (48.9 KB) |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
@@ -69,14 +69,14 @@
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
-- **Processing Efficiency**: 218235 domains/second
-- **Average Download Time**: 0.12s per repository
+- **Processing Efficiency**: 144478 domains/second
+- **Average Download Time**: 0.21s per repository
 - **Total Data Processed**: 4.9 MB
 
 #### 🎯 Quality Metrics
-- **Duplicate Detection**: 206,560 duplicates identified and removed
+- **Duplicate Detection**: 206,384 duplicates identified and removed
 - **Data Integrity**: 100.0% repository success rate
-- **Coverage Efficiency**: 38.6% unique domains retained
+- **Coverage Efficiency**: 38.7% unique domains retained
 
 </details>
 
