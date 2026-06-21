@@ -1,0 +1,99 @@
+name: 🏷️ Auto Release
+
+# Runs on every push to master (e.g. domain-sync merges, config changes).
+# release-it bumps the version, commits, tags, pushes, and creates a GitHub
+# release. The tag push (via PAT) then triggers publish-npm.yml, which publishes
+# to npm using trusted publishing (OIDC) — no npm token anywhere.
+#
+# IMPORTANT: pushes made with the default GITHUB_TOKEN do NOT trigger downstream
+# workflows (GitHub anti-loop rule). release-it therefore pushes + creates the
+# release using the RELEASE_IT_TOKEN PAT, so publish-npm.yml fires on the tag.
+#
+# Skips automatically when there are no commits since the last tag (no changes).
+# This also prevents a loop: release-it's own release commit is tagged, so the
+# push-triggered follow-up run sees 0 new commits and exits. concurrency keeps
+# runs serial. Bump level follows conventional commits (feat=minor, fix/chore=
+# patch, BREAKING=major) — version is read from package.json (npm.publish=false).
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write # release-it: commit, tag, push, GitHub release
+
+concurrency:
+  group: auto-release
+  cancel-in-progress: false
+
+env:
+  FORCE_COLOR: 3
+  NODE_ENV: production
+
+jobs:
+  release:
+    name: 🏷️ Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Always run on push/dispatch (workflow_run not used as a trigger anymore).
+    if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_IT_TOKEN }} # PAT so tag push triggers publish-npm.yml
+
+      - name: 🥟 Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.2.22
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: 🔍 Check for new commits since last tag
+        id: check
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+            echo "No existing tag found — skip auto-release."
+            exit 0
+          fi
+          COUNT=$(git rev-list "${LAST_TAG}..HEAD" --count)
+          echo "Commits since ${LAST_TAG}: ${COUNT}"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_new=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 👤 Configure git identity
+        if: steps.check.outputs.has_new == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: 🏷️ Release (release-it)
+        if: steps.check.outputs.has_new == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_IT_TOKEN }}
+        run: bunx release-it --ci
+
+      - name: 🏷️ Summary
+        if: always()
+        env:
+          HAS_NEW: ${{ steps.check.outputs.has_new }}
+        run: |
+          {
+            echo "### Auto release"
+            echo ""
+            if [ "$HAS_NEW" = "true" ]; then
+              echo "- Status: released — tag pushed, publish-npm.yml will publish via OIDC"
+            else
+              echo "- Status: skipped — no new commits since last tag"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

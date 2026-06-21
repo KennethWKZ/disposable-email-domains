@@ -33,6 +33,7 @@ jobs:
   publish:
     name: 📦 Publish to npm (trusted publishing)
     runs-on: ubuntu-latest
+    environment: release # npm trusted publisher is bound to this environment
     timeout-minutes: 15
 
     steps:

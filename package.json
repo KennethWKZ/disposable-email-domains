@@ -24,10 +24,10 @@
     "name": "Kenneth Wong",
     "url": "https://github.com/kennethwkz"
   },
-  "homepage": "https://gihtub.com/kennethwkz/disposable-email-domains#readme",
+  "homepage": "https://github.com/kennethwkz/disposable-email-domains#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kennethwkz/disposable-email-domains.git"
+    "url": "https://github.com/KennethWKZ/disposable-email-domains"
   },
   "keywords": [
     "disposable",
