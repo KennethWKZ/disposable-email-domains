@@ -6,7 +6,7 @@
     "tag": true,
     "push": true
   },
-  "npm": true,
+  "npm": false,
   "github": {
     "release": true
   },

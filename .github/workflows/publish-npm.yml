@@ -1,0 +1,80 @@
+name: 📦 Publish to npm
+
+# Triggered by release-it pushing a `v*` tag (e.g. v1.3.4).
+# release-it.json has `npm: false`, so publishing is owned by this workflow.
+#
+# Auth = npm Trusted Publishing (OIDC). No NPM_TOKEN.
+# Requires the trusted publisher to be configured on the npm package:
+#   npmjs.com → @kennethwkz/disposable-email-domains → Settings → Trusted Publishers
+#     Repository owner: kennethwkz
+#     Repository:      disposable-email-domains
+#     Workflow file:   publish-npm.yml
+# Note: `bun publish` does not support OIDC (oven-sh/bun#24855), so the final
+# publish step uses the npm CLI.
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # required for npm trusted publishing (OIDC)
+
+concurrency:
+  group: publish-npm-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FORCE_COLOR: 3
+  NODE_ENV: production
+
+jobs:
+  publish:
+    name: 📦 Publish to npm (trusted publishing)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: 🥟 Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.2.22
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: 🏗️ Build
+        run: bun run build
+
+      - name: 🧪 Verify (types + size + tests)
+        run: bun run test
+
+      # npm CLI for publish — trusted publishing (OIDC) needs no registry-url/token config.
+      - name: 🧰 Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - name: 🚀 Publish to npm (OIDC trusted publishing)
+        run: npm publish --provenance --access public
+
+      - name: 🏷️ Summary
+        if: always()
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          {
+            echo "### Publish result"
+            echo ""
+            echo "- Package: \`@kennethwkz/disposable-email-domains\`"
+            echo "- Version: \`v${VERSION}\`"
+            echo "- Ref: \`${REF_NAME}\`"
+            echo "- Auth: trusted publishing (OIDC, no token)"
+          } >> "$GITHUB_STEP_SUMMARY"
