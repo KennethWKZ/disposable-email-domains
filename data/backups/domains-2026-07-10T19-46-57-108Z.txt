@@ -116218,9 +116218,7 @@ tmail.edu.rs
 tmail.gg
 tmail.io
 tmail.link
-tmail.lt
 tmail.mmomekong.com
-tmail.mx
 tmail.org
 tmail.run
 tmail.ws
