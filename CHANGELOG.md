@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.3.6](https://github.com/KennethWKZ/disposable-email-domains/compare/v1.3.5...v1.3.6) (2026-07-11)
+
 ## [1.3.5](https://github.com/KennethWKZ/disposable-email-domains/compare/v1.3.4...v1.3.5) (2026-07-06)
 
 ## [1.3.4](https://github.com/KennethWKZ/disposable-email-domains/compare/1.3.3...v1.3.4) (2026-06-21)
