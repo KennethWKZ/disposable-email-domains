@@ -28,7 +28,7 @@
 <!-- START STATS -->
 ## 📊 Current Statistics
 
-> **Last Updated**: July 13, 2026 at 09:44 AM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
+> **Last Updated**: July 13, 2026 at 07:41 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
 > 📋 **[View Detailed Report](data/report.md)** | Last sync analysis and insights
 
 <div align="center">
@@ -37,13 +37,13 @@
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
 |:---:|:---:|:---:|:---:|
-| **132,851** | **29** | **291** | **-0.20%** |
+| **132,851** | **0** | **0** | **0.00%** |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
 |:---:|:---:|:---:|:---:|
-| **0.78s** | **100.0%** | **2.0 MB** | **201,177 removed** |
+| **0.69s** | **100.0%** | **2.0 MB** | **201,177 removed** |
 
 </div>
 
@@ -51,16 +51,16 @@
 
 | Repository | Domains | Success | Performance |
 |------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 123,690 | ✅ | 0.18s (1.8 MB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 74,520 | ✅ | 0.28s (1.1 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,360 | ✅ | 0.38s (846.7 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,279 | ✅ | 0.45s (388.1 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 12,376 | ✅ | 0.20s (176.1 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.42s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,211 | ✅ | 0.16s (141.5 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 7,981 | ✅ | 0.12s (110.8 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.22s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.35s (48.9 KB) |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 123,690 | ✅ | 0.34s (1.8 MB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 74,520 | ✅ | 0.31s (1.1 MB) |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,360 | ✅ | 0.18s (846.7 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,279 | ✅ | 0.06s (388.1 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 12,376 | ✅ | 0.10s (176.1 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.10s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,211 | ✅ | 0.04s (141.5 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 7,981 | ✅ | 0.08s (110.8 KB) |
+| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.01s (61.8 KB) |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.07s (48.9 KB) |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
@@ -69,8 +69,8 @@
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
-- **Processing Efficiency**: 170322 domains/second
-- **Average Download Time**: 0.27s per repository
+- **Processing Efficiency**: 191981 domains/second
+- **Average Download Time**: 0.11s per repository
 - **Total Data Processed**: 4.9 MB
 
 #### 🎯 Quality Metrics
