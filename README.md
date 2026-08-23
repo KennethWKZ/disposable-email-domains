@@ -28,7 +28,7 @@
 <!-- START STATS -->
 ## 📊 Current Statistics
 
-> **Last Updated**: August 22, 2026 at 06:41 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
+> **Last Updated**: August 23, 2026 at 06:54 AM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
 > 📋 **[View Detailed Report](data/report.md)** | Last sync analysis and insights
 
 <div align="center">
@@ -37,13 +37,13 @@
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
 |:---:|:---:|:---:|:---:|
-| **133,394** | **0** | **0** | **0.00%** |
+| **133,396** | **4** | **2** | **+0.00%** |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
 |:---:|:---:|:---:|:---:|
-| **0.63s** | **100.0%** | **2.0 MB** | **198,460 removed** |
+| **0.83s** | **100.0%** | **2.0 MB** | **198,481 removed** |
 
 </div>
 
@@ -51,16 +51,16 @@
 
 | Repository | Domains | Success | Performance |
 |------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 124,598 | ✅ | 0.27s (1.8 MB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 74,889 | ✅ | 0.26s (1.1 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,356 | ✅ | 0.17s (846.7 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,277 | ✅ | 0.12s (388.0 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.10s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,296 | ✅ | 0.07s (141.9 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 8,558 | ✅ | 0.09s (121.1 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 8,335 | ✅ | 0.03s (115.6 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.08s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.11s (48.9 KB) |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 124,614 | ✅ | 0.42s (1.8 MB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 74,892 | ✅ | 0.32s (1.1 MB) |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,356 | ✅ | 0.41s (846.7 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,277 | ✅ | 0.23s (388.0 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.18s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,306 | ✅ | 0.14s (142.0 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 8,558 | ✅ | 0.13s (121.1 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 8,335 | ✅ | 0.06s (115.6 KB) |
+| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.19s (61.8 KB) |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.10s (48.9 KB) |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
@@ -69,12 +69,12 @@
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
-- **Processing Efficiency**: 210401 domains/second
-- **Average Download Time**: 0.12s per repository
+- **Processing Efficiency**: 160525 domains/second
+- **Average Download Time**: 0.20s per repository
 - **Total Data Processed**: 4.9 MB
 
 #### 🎯 Quality Metrics
-- **Duplicate Detection**: 198,460 duplicates identified and removed
+- **Duplicate Detection**: 198,481 duplicates identified and removed
 - **Data Integrity**: 100.0% repository success rate
 - **Coverage Efficiency**: 40.2% unique domains retained
 
