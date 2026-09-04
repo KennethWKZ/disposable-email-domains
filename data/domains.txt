@@ -13828,6 +13828,7 @@ atomistifml.com
 atomread.com
 atomtoys.ru
 atoptomail.com
+ator.email
 atorymail.com
 atourfinest.com
 atoyot.cf
@@ -15495,7 +15496,6 @@ b5nr6.anonbox.net
 b5r5wsdr6.pl
 b5safaria.com
 b5umv.anonbox.net
-b5xlu.anonbox.net
 b5y54.anonbox.net
 b5yop.anonbox.net
 b5yvo.anonbox.net
@@ -81703,6 +81703,7 @@ mscold.com
 mscvideos.site
 msd-tech.com
 msdc.co
+msdkc.anonbox.net
 msdla.com
 msdnereeemw.org
 msendback.com
