@@ -28,7 +28,7 @@
 <!-- START STATS -->
 ## 📊 Current Statistics
 
-> **Last Updated**: September 25, 2026 at 09:27 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
+> **Last Updated**: September 26, 2026 at 11:15 AM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
 > 📋 **[View Detailed Report](data/report.md)** | Last sync analysis and insights
 
 <div align="center">
@@ -37,13 +37,13 @@
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
 |:---:|:---:|:---:|:---:|
-| **134,456** | **0** | **0** | **0.00%** |
+| **134,461** | **7** | **2** | **+0.00%** |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
 |:---:|:---:|:---:|:---:|
-| **0.63s** | **100.0%** | **2.0 MB** | **197,161 removed** |
+| **0.68s** | **100.0%** | **2.0 MB** | **197,174 removed** |
 
 </div>
 
@@ -51,16 +51,16 @@
 
 | Repository | Domains | Success | Performance |
 |------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 125,952 | ✅ | 0.29s (1.9 MB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 75,419 | ✅ | 0.28s (1.1 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,331 | ✅ | 0.19s (846.3 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,277 | ✅ | 0.12s (388.0 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.09s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,385 | ✅ | 0.05s (143.1 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 8,981 | ✅ | 0.07s (124.8 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 5,797 | ✅ | 0.14s (80.9 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.09s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.09s (48.9 KB) |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 125,970 | ✅ | 0.34s (1.9 MB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 75,422 | ✅ | 0.22s (1.1 MB) |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,331 | ✅ | 0.07s (846.3 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,277 | ✅ | 0.11s (388.0 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.15s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,373 | ✅ | 0.04s (143.0 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 8,981 | ✅ | 0.14s (124.8 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 5,797 | ✅ | 0.15s (80.9 KB) |
+| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.11s (61.8 KB) |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.12s (48.9 KB) |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
@@ -69,12 +69,12 @@
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
-- **Processing Efficiency**: 213422 domains/second
-- **Average Download Time**: 0.12s per repository
+- **Processing Efficiency**: 198613 domains/second
+- **Average Download Time**: 0.15s per repository
 - **Total Data Processed**: 4.9 MB
 
 #### 🎯 Quality Metrics
-- **Duplicate Detection**: 197,161 duplicates identified and removed
+- **Duplicate Detection**: 197,174 duplicates identified and removed
 - **Data Integrity**: 100.0% repository success rate
 - **Coverage Efficiency**: 40.5% unique domains retained
 
