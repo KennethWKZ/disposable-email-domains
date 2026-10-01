@@ -28,7 +28,7 @@
 <!-- START STATS -->
 ## 📊 Current Statistics
 
-> **Last Updated**: October 1, 2026 at 01:01 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
+> **Last Updated**: October 1, 2026 at 10:36 PM UTC | **Next Sync**: Automated twice daily (6 AM & 6 PM UTC)
 > 📋 **[View Detailed Report](data/report.md)** | Last sync analysis and insights
 
 <div align="center">
@@ -37,13 +37,13 @@
 
 | 📧 **Total Domains** | 🆕 **Recent Additions** | 🗑️ **Recent Removals** | 📈 **Growth Rate** |
 |:---:|:---:|:---:|:---:|
-| **142,367** | **107** | **1** | **+0.07%** |
+| **142,368** | **1** | **0** | **+0.00%** |
 
 ### ⚡ Performance Metrics
 
 | 🚀 **Sync Time** | ✅ **Success Rate** | 📦 **File Size** | 🔄 **Deduplication** |
 |:---:|:---:|:---:|:---:|
-| **1.27s** | **100.0%** | **2.1 MB** | **223,847 removed** |
+| **0.94s** | **100.0%** | **2.1 MB** | **223,853 removed** |
 
 </div>
 
@@ -51,16 +51,16 @@
 
 | Repository | Domains | Success | Performance |
 |------------|---------|---------|-------------|
-| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 136,539 | ✅ | 0.65s (2.0 MB) |
-| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 98,947 | ✅ | 0.73s (1.5 MB) |
-| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,331 | ✅ | 0.60s (846.3 KB) |
-| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,277 | ✅ | 0.38s (388.0 KB) |
-| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.41s (144.0 KB) |
-| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,480 | ✅ | 0.35s (144.3 KB) |
-| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 9,189 | ✅ | 0.23s (127.1 KB) |
-| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 6,022 | ✅ | 0.24s (83.5 KB) |
-| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.42s (61.8 KB) |
-| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.25s (48.9 KB) |
+| [kslr/disposable-email-domains](https://github.com/kslr/disposable-email-domains) | 136,539 | ✅ | 0.49s (2.0 MB) |
+| [disposable/disposable-email-domains](https://github.com/disposable/disposable-email-domains) | 98,947 | ✅ | 0.45s (1.5 MB) |
+| [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker) | 56,331 | ✅ | 0.26s (846.3 KB) |
+| [wesbos/burner-email-providers](https://github.com/wesbos/burner-email-providers) | 27,277 | ✅ | 0.19s (388.0 KB) |
+| [sublime-security/static-files](https://github.com/sublime-security/static-files) | 10,522 | ✅ | 0.23s (144.0 KB) |
+| [7c/fakefilter](https://github.com/7c/fakefilter) | 10,480 | ✅ | 0.16s (144.3 KB) |
+| [disposable-email-domains/disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) | 9,196 | ✅ | 0.10s (127.2 KB) |
+| [groundcat/disposable-email-domain-list](https://github.com/groundcat/disposable-email-domain-list) | 6,022 | ✅ | 0.21s (83.5 KB) |
+| [willwhite/freemail](https://github.com/willwhite/freemail) | 4,462 | ✅ | 0.25s (61.8 KB) |
+| [eser/sanitizer-svc](https://github.com/eser/sanitizer-svc) | 3,855 | ✅ | 0.19s (48.9 KB) |
 
 <details>
 <summary>📈 <strong>Detailed Metrics</strong></summary>
@@ -69,12 +69,12 @@
 - **Total Sources**: 15 repositories monitored
 - **Active Sources**: 15 successfully synchronized
 - **Failed Sources**: 0 temporary failures
-- **Processing Efficiency**: 112454 domains/second
-- **Average Download Time**: 0.36s per repository
+- **Processing Efficiency**: 150973 domains/second
+- **Average Download Time**: 0.24s per repository
 - **Total Data Processed**: 5.4 MB
 
 #### 🎯 Quality Metrics
-- **Duplicate Detection**: 223,847 duplicates identified and removed
+- **Duplicate Detection**: 223,853 duplicates identified and removed
 - **Data Integrity**: 100.0% repository success rate
 - **Coverage Efficiency**: 38.9% unique domains retained
 
