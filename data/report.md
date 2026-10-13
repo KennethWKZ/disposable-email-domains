@@ -1,18 +1,18 @@
 # Disposable Email Domains Sync Report
 
 ## Summary
-- **Last Sync**: 2026-10-12T15:12:00.373Z
-- **Processing Time**: 0.64s
+- **Last Sync**: 2026-10-13T00:32:37.845Z
+- **Processing Time**: 0.79s
 - **Total Repositories**: 15
 - **Successful Downloads**: 15
 - **Failed Downloads**: 0
 - **Success Rate**: 100.0%
 
 ## Domain Statistics
-- **Total Unique Domains**: 143,348
-- **New Domains**: 27
-- **Removed Domains**: 111
-- **Duplicate Entries Found**: 238,439
+- **Total Unique Domains**: 143,354
+- **New Domains**: 6
+- **Removed Domains**: 0
+- **Duplicate Entries Found**: 238,429
 
 ## Repository Details
 
@@ -20,39 +20,39 @@
 ### https://github.com/disposable-email-domains/disposable-email-domains
 - **Status**: ✅ Success
 - **Domains**: 9,880
-- **Download Time**: 38ms
+- **Download Time**: 51ms
 - **File Size**: 142,977 bytes
 
 
 
 ### https://github.com/FGRibreau/mailchecker
 - **Status**: ✅ Success
-- **Domains**: 56,513
-- **Download Time**: 179ms
-- **File Size**: 868,911 bytes
+- **Domains**: 56,512
+- **Download Time**: 281ms
+- **File Size**: 868,900 bytes
 
 
 
 ### https://github.com/disposable/disposable-email-domains
 - **Status**: ✅ Success
 - **Domains**: 98,517
-- **Download Time**: 268ms
+- **Download Time**: 378ms
 - **File Size**: 1,521,980 bytes
 
 
 
 ### https://github.com/7c/fakefilter
 - **Status**: ✅ Success
-- **Domains**: 10,604
-- **Download Time**: 30ms
-- **File Size**: 149,229 bytes
+- **Domains**: 10,608
+- **Download Time**: 171ms
+- **File Size**: 149,271 bytes
 
 
 
 ### https://github.com/wesbos/burner-email-providers
 - **Status**: ✅ Success
 - **Domains**: 27,277
-- **Download Time**: 51ms
+- **Download Time**: 190ms
 - **File Size**: 397,354 bytes
 
 
@@ -60,7 +60,7 @@
 ### https://github.com/sublime-security/static-files
 - **Status**: ✅ Success
 - **Domains**: 10,522
-- **Download Time**: 115ms
+- **Download Time**: 154ms
 - **File Size**: 147,427 bytes
 
 
@@ -68,7 +68,7 @@
 ### https://github.com/TheDahoom/disposable-email
 - **Status**: ✅ Success
 - **Domains**: 18
-- **Download Time**: 121ms
+- **Download Time**: 125ms
 - **File Size**: 234 bytes
 
 
@@ -76,7 +76,7 @@
 ### https://github.com/groundcat/disposable-email-domain-list
 - **Status**: ✅ Success
 - **Domains**: 21,453
-- **Download Time**: 102ms
+- **Download Time**: 218ms
 - **File Size**: 337,346 bytes
 
 
@@ -84,23 +84,23 @@
 ### https://github.com/eser/sanitizer-svc
 - **Status**: ✅ Success
 - **Domains**: 3,855
-- **Download Time**: 98ms
+- **Download Time**: 123ms
 - **File Size**: 50,067 bytes
 
 
 
 ### https://github.com/jespernissen/disposable-maildomain-list
 - **Status**: ✅ Success
-- **Domains**: 983
-- **Download Time**: 90ms
-- **File Size**: 12,954 bytes
+- **Domains**: 982
+- **Download Time**: 108ms
+- **File Size**: 12,937 bytes
 
 
 
 ### https://github.com/unkn0w/disposable-email-domain-list
 - **Status**: ✅ Success
 - **Domains**: 3,616
-- **Download Time**: 57ms
+- **Download Time**: 67ms
 - **File Size**: 46,843 bytes
 
 
@@ -108,7 +108,7 @@
 ### https://github.com/GeroldSetz/emailondeck.com-domains
 - **Status**: ✅ Success
 - **Domains**: 1,121
-- **Download Time**: 101ms
+- **Download Time**: 140ms
 - **File Size**: 15,722 bytes
 
 
@@ -116,7 +116,7 @@
 ### https://github.com/kslr/disposable-email-domains
 - **Status**: ✅ Success
 - **Domains**: 136,223
-- **Download Time**: 316ms
+- **Download Time**: 397ms
 - **File Size**: 2,128,003 bytes
 
 
@@ -124,7 +124,7 @@
 ### https://github.com/MattKetmo/EmailChecker
 - **Status**: ✅ Success
 - **Domains**: 2,515
-- **Download Time**: 90ms
+- **Download Time**: 226ms
 - **File Size**: 33,184 bytes
 
 
@@ -132,7 +132,7 @@
 ### https://github.com/willwhite/freemail
 - **Status**: ✅ Success
 - **Domains**: 4,462
-- **Download Time**: 91ms
+- **Download Time**: 89ms
 - **File Size**: 63,316 bytes
 
 
